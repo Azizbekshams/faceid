@@ -6,6 +6,7 @@ import {
   registerUser,
   updateUserProfile,
 } from "../controllers/userController.js";
+import { saveCheatingLog, getCheatingLogsByExamId } from "../controllers/cheatingLogController.js";
 import { protect } from "../middleware/authMiddleware.js";
 import { createExam, getExams } from "../controllers/examController.js";
 const userRoutes = express.Router();
@@ -17,5 +18,9 @@ userRoutes
   .route("/profile")
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
+  
+userRoutes.route('/cheatingLogs')
+  .post(protect, saveCheatingLog)
+  .get(protect, getCheatingLogsByExamId);
 
 export default userRoutes;

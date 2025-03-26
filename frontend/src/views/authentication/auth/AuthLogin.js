@@ -97,8 +97,7 @@ const AuthLogin = ({ formik, title, subtitle, subtext }) => {
           size="large"
           fullWidth
           type="submit"
-          
-          // onClick={handleSubmit} // Call the HandleSubmit function on button click
+          onClick={handleSubmit} // Call the HandleSubmit function on button click
         >
           Sign In
         </Button>
